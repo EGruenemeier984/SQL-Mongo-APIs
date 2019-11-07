@@ -21,13 +21,13 @@ app.set('view engine', 'ejs');
  * Server Configuration
  */
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
+app.use(bodyParser.json());
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// Gives the client access to static files (in public folder).
+// Gives the client access to static files (in public folder)
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
